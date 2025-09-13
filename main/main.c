@@ -27,13 +27,11 @@
 
 static const char *TAG = "ESP_BRUTE";
 
-/* Example wordlist */
+/* Example wordlist  */
+/* 20,000  password  */
 const char *wordlist[] = {
 	"Abcd1dcbA1",
-	"Abcd1dcba2",
-	"Abcd1dcBA2",
-	"Abcd1dCbA2",
-	"Abcd1dcbA2",
+
 	"12345678"
     
 };
