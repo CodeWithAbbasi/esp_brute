@@ -1,16 +1,32 @@
 
 # 📖 ESP Brute – Device Usage Guide (ESP32 DevKit v1)
 
-This guide explains how to set up, flash, and use the `esp_brute` firmware on an **ESP32 DevKit v1** board.
+
+# ESP Brute
+
+ESP32-based tool to validate initial network access in authorized test environments.  
+Designed for quick field testing (ESP32 DevKit v1, ESP-IDF v4.4.3). Includes MAC randomization, configurable attempt limits, and a simple demo wordlist.
+
+> **Tagline:** Getting on the network is often the first threat — ESP Brute helps pentesters validate that entry point.  
+> **Important:** Use only in labs or where you have explicit written permission.
 
 ---
 
-## 1. Hardware Requirements
-- ESP32 DevKit v1 (or any ESP32 board)  
-- Micro-USB cable (data + power)  
-- Computer with ESP-IDF v4.4.3 installed  
+## Features
+- Scan nearby Wi-Fi APs (SSID, BSSID, RSSI)
+- Iterate APs with a wordlist and attempt connections
+- MAC randomization before each attempt
+- Per-AP and global attempt limits
+- Simple demo wordlist built into source (option to expand via filesystem/SD in future)
 
 ---
+
+**Permissions**
+- **Written authorization** from the network owner(s) is required for any testing. Do NOT use this on networks you do not own or do not have explicit permission to test.
+
+---
+
+## Quick start — build & flash (ESP-IDF)
 
 ## 2. Clone the Repository
 git clone https://github.com/CodeWithAbbasi/esp_brute.git
