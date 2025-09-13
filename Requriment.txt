@@ -1,0 +1,41 @@
+## Requirements
+
+**Hardware**
+- ESP32 DevKit v1 (or compatible ESP32 board)
+- USB A → micro-USB cable (data + power)
+- (Optional) SD card module (for very large wordlists)
+- (Optional) microSD card
+
+**Software & Tools**
+- ESP-IDF v4.4.3 (tested) — ESP-IDF must be installed and environment variables configured  
+- Python 3.8+ (required by ESP-IDF tooling)
+- Git (to clone the repo)
+- Serial terminal (idf.py monitor / miniterm / PuTTY / screen)
+- (Optional) GitHub CLI `gh` or a Personal Access Token (PAT) if repo access requires auth
+
+**Drivers**
+- USB serial driver for your board (e.g., CP210x, CH340) — install for Windows/macOS if needed
+
+**Repository / Access**
+- GitHub account with access to `CodeWithAbbasi/esp_brute` (repo is private) — DM the repo owner for access
+
+
+**Permissions & Legal**
+- **Written authorization** from network owner(s) for any testing. Do NOT run this tool on networks you do not own or have explicit permission to test.
+- Use only in controlled lab environments unless you have documented permission.
+
+**Knowledge / Skills**
+- Basic familiarity with ESP-IDF build/flash workflow (`idf.py build`, `idf.py flash monitor`)
+- Basic comfort with editing C source files to update the `wordlist[]` or constants
+- Basic understanding of Wi-Fi networks and ethical pentesting practices
+
+**Recommended Configurations**
+- Set `idf.py menuconfig` partition table if you will use SPIFFS/LittleFS for wordlists
+- Configure serial port in menuconfig or pass via `-p <PORT>` when flashing
+- Adjust constants in `lab_dict_device_clean_mac.c` for test aggressiveness:
+  - `CONNECT_TIMEOUT_MS`, `POLITE_DELAY_MS`, `MAX_ATTEMPTS_PER_AP`, `GLOBAL_MAX_ATTEMPTS`
+
+**Notes**
+- Hardcoded wordlists are fine for small tests (recommended ≤ 20,000 entries). For larger lists, use SPIFFS or an SD card.
+- Expect ~5 seconds per connection attempt on average — plan total runtime accordingly.
+- This project is for research/authorized testing only. The developer requires written authorization for production use.
